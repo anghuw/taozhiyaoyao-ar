@@ -639,8 +639,9 @@ import { MindARThree } from './node_modules/mind-ar/dist/mindar-image-three.prod
       C.charGroup.rotation.z = Math.sin(now*2.0)*0.10;
       C.charGroup.rotation.y = Math.sin(now*1.3)*0.16;
       C.charGroup.rotation.x = Math.sin(now*1.6+0.4)*0.035;
-      // 时不时蹦一下，别让角色看起来是贴图
-      var hopCycle = Math.max(0, Math.sin(now*1.15));
+      // 时不时蹦一下，别让角色看起来是贴图；AR 里等角色完全出箱后再开始蹦
+      var hopOn = !arMode || (now - arStart) > 2.4;
+      var hopCycle = hopOn ? Math.max(0, Math.sin(now*1.15)) : 0;
       C.charGroup.position.y += Math.pow(hopCycle, 14) * 0.07;
     }
     // 无锡徽章：左右摆动 + 上下浮动，像一枚会转的印章
