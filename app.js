@@ -146,8 +146,8 @@ import { MindARThree } from './node_modules/mind-ar/dist/mindar-image-three.prod
     var t = new THREE.CanvasTexture(cv); t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8;
     return t;
   }
-  var IMG_TIMEOUT = 8000;
-  var ASSET_BUDGET = 12000;
+  var IMG_TIMEOUT = 20000;
+  var ASSET_BUDGET = 26000;
   function imageTexture(img){
     var t = new THREE.Texture(img);
     t.colorSpace = THREE.SRGBColorSpace; t.anisotropy = 8; t.needsUpdate = true;
@@ -1040,8 +1040,8 @@ import { MindARThree } from './node_modules/mind-ar/dist/mindar-image-three.prod
   var WEBP_OK = true;
   function assetJobs(){
     return [
-      { key:'boxFront', srcs:['assets/box-front.png'] },
-      { key:'boxSide',  srcs:['assets/box-side.png'] },
+      { key:'boxFront', srcs:['assets/box-front.webp', 'assets/box-front.png'] },
+      { key:'boxSide',  srcs:['assets/box-side.webp', 'assets/box-side.png'] },
       { key:'ipSheet',  srcs:(WEBP_OK ? ['assets/ip-sheet-320.webp'] : []).concat(['assets/ip-sheet-320.png']) }
     ];
   }
