@@ -17,7 +17,9 @@
   } catch (e) { window.__peachImportMap = true; }
 })();
 </script>
-<link rel="preload" as="image" href="assets/ip-sheet-320.webp" type="image/webp" fetchpriority="low">
+<link rel="modulepreload" href="three.module.js">
+<link rel="preload" as="image" href="assets/ip-sheet-320.webp" type="image/webp">
+<link rel="preload" as="image" href="assets/box-front.webp" type="image/webp">
 <style>
   :root{
     --rose:#c2185b; --rose-2:#e63f72; --pink:#ff9dbb; --cream:#fff7f2;
@@ -336,6 +338,6 @@
 <script type="importmap">
 {"imports":{"three":"./three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}
 </script>
-<script type="module" src="app.js?v=12"></script>
+<script type="module" src="app.js?v=13"></script>
 </body>
 </html>
